@@ -27,15 +27,18 @@ Results are categorized depending on type of technology (whether it is CMS or da
 technologies that can be discovered using WAD.
 
 ## Installation
-[WAD is available via PyPI](https://pypi.python.org/pypi/wad), so in order to install it, you simply need to run following command:
 
-`pip install wad`
+First thing I fixed in WAD is `install_requires` so that it is compatible with newer version of Python and install the required package six without a hustle. To install this fork, simply run
+
+```bash
+pipx install fingerprintweb
+```
 
 ## Usage
-Use `wad -h` to print help text.
+Use `fingerprint -h` to print help text.
 JSON is used by default for formatting output data, but you can also use other formats with -f <format> option.
 ### Example usage scenario
-Command: `wad -u https://pypi.python.org/` 
+Command: `fingerprint -u https://pypi.python.org/` 
 
 Output:
 
@@ -68,6 +71,13 @@ Secondly, the project has and will continue to naturally diverge from Wappalyzer
 Finally, additional features added into WAD project aren't ported into Wappalyzer at the same time.
 
 ## Changelog
+### 0.1.0-dev (2020-12-19)
+- Hard forked from WAD to fingerprint (fingerprintweb on PyPI)
+- Fixed dependency installation
+- Renamed the references of WAD to fingerprint
+
+-----------------HARD FORK----------------
+
 ### 0.4.6 (2020-09-28)
 
 - Write logging outputs to stderr instead of stdout
