@@ -1,5 +1,7 @@
+# fingerprint
+fingerprint is a fork of WAD expected to have some major changes in the way it parses and detects technologies. Along with detection, it will also alert about vulnerabilities present in the detected technology. Note that the source code publicly present wont contain any vulnerability database for the sake of preserving my hard earned knowledge of exploits and zero days. I have longed for a good extensible vulnerability scanner and I think WAD might work. So if you are expecting some development progress or similar, please don't. This is a personal project to be used personally I might take it seriously in the nearby future but for now, I am writing it for personal usage.
+
 # WAD - Web application detector
-[![Build Status](https://travis-ci.org/CERN-CERT/WAD.svg?branch=master)](https://travis-ci.org/CERN-CERT/WAD) [![PyPI](https://img.shields.io/pypi/v/wad.svg)](https://pypi.python.org/pypi/wad)
 
 WAD lets you analyze given URL(s) and detect technologies used by web application behind that URL, 
 from the OS and web server level, to the programming platform and frameworks, as well as server- and client-side

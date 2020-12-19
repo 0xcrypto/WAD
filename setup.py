@@ -8,17 +8,18 @@ except (IOError, ImportError):
     long_description = ''
 
 setup(
-    name='wad',
-    version='0.4.6',
-    description='A tool for detecting technologies used by web applications.',
+    name='fingerprint',
+    version='0.1.0',
+    description='A tool for detecting technologies used by web applications. Hard forks wad v0.4.6',
     long_description=long_description,
-    url='https://github.com/CERN-CERT/WAD',
+    url='https://github.com/0xcrypto/fingerprints',
     license='GPLv3',
-    author='Sebastian Lopienski',
-    author_email='sebastian.lopienski@cern.ch',
+    author='0xcrypto',
+    author_email='vi@hackberry.xyz',
     packages=find_packages(),
     include_package_data=True,
     requires=['six'],
+    install_requires=['six'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Information Technology',
@@ -39,7 +40,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'wad = wad.__main__:main'
+            'fingerprint = wad.__main__:main'
         ]
     },
 )
