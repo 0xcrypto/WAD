@@ -8,7 +8,7 @@ except (IOError, ImportError):
     long_description = ''
 
 setup(
-    name='fingerprint',
+    name='fingerprintweb',
     version='0.1.0-dev',
     description='A tool for detecting technologies used by web applications. Hard forks wad v0.4.6',
     long_description=long_description,
