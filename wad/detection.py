@@ -25,7 +25,7 @@ class Detector(object):
 
     def detect(self, url, limit=None, exclude=None, timeout=TIMEOUT):
         logging.info("- %s", url)
-
+       
         original_url = url
 
         if not self.expected_url(url, limit, exclude):
@@ -82,6 +82,9 @@ class Detector(object):
         results = {}
         for url in urls:
             try:
+                if(-1 == url.find("http://")):
+                    if(-1 == url.find("https://")):
+                        url = 'http://' + url
                 res = self.detect(url, limit, exclude, timeout)
                 results.update(res)
             except Exception as e:
