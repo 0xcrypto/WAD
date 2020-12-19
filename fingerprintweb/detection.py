@@ -7,8 +7,8 @@ import logging
 import socket
 import re
 
-from wad import tools
-from wad.clues import Clues
+from . import tools
+from .clues import Clues
 
 # TODO: Switch to BeautifulSoup or lxml for HTML parsing purposes
 re_meta = re.compile(r'<meta[^>]+>', re.IGNORECASE)

@@ -5,7 +5,7 @@ import json
 import logging
 import pprint
 import csv
-from wad import tools
+from . import tools
 
 
 class OutputFormat(object):

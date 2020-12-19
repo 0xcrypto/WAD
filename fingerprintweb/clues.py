@@ -14,9 +14,9 @@ import re
 import sre_constants
 import json
 
-from wad import tools
+from . import tools
 
-CLUES_FILE_PATHS = [os.path.join(os.path.dirname(__file__), 'etc/apps.json'), '/etc/wad/apps.json']
+CLUES_FILE_PATHS = [os.path.join(os.path.dirname(__file__), 'etc/apps.json'), '/etc/fingerprintweb/apps.json']
 clues_lock = threading.RLock()
 
 

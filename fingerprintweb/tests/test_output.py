@@ -2,7 +2,7 @@ from __future__ import absolute_import, division, print_function, unicode_litera
 import six
 
 import unittest
-from wad.output import JSONOutput, ConsolePrettyOutput, CSVOutput, HumanReadableOutput
+from ..output import JSONOutput, ConsolePrettyOutput, CSVOutput, HumanReadableOutput
 
 
 class TestOutputs(unittest.TestCase):

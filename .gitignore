@@ -2,7 +2,7 @@
 .pydevproject
 .settings/
 *.pyc
-wad/test
+fingerprintweb/test
 *.py[cod]
 obsolete/
 rpms/

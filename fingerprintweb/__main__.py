@@ -5,13 +5,14 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 
 import logging
+from os import path
 from optparse import OptionParser
 
-from wad import tools
-from wad.clues import Clues
-from wad.detection import TIMEOUT, Detector
-from wad.group import group
-from wad.output import JSONOutput, CSVOutput, HumanReadableOutput
+from . import tools
+from .clues import Clues
+from .detection import TIMEOUT, Detector
+from .group import group
+from .output import JSONOutput, CSVOutput, HumanReadableOutput
 
 output_format_map = {
     'csv': CSVOutput,
@@ -19,9 +20,19 @@ output_format_map = {
     'txt': HumanReadableOutput,
 }
 
+this_directory = path.abspath(path.dirname(__file__))
+with open(path.join(this_directory, '__version__.py'), encoding='utf-8') as f:
+    __version__ = f.read().strip()
+
+try:
+    pass
+except Exception:
+    print("Something went wrong with installation. Please reinstall again. If error continues, submit an issue at https://github.com/0xcrypto/fingerprint/issues")
+    exit(1)
+
 
 def main(timeout=TIMEOUT):
-    desc = """WAD -
+    desc = """fingerprintweb -
 This component analyzes given URL(s) and detects technologies, libraries,
 frameworks etc. used by this application, from the OS and web server level,
 to the programming platform and frameworks, and server- and client-side
@@ -31,7 +42,7 @@ etc."""
 
     parser = OptionParser(description=desc,
                           usage="Usage: %prog -u <URLs|@URLfile>\nHelp:  %prog -h",
-                          version="%prog 1.0")
+                          version="%prog " + __version__)
 
     parser.add_option("-u", "--url", dest="urls", metavar="URLS|@FILE",
                       help="list of URLs (comma-separated), or a file with a list of URLs (one per line)")

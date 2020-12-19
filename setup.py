@@ -1,17 +1,20 @@
 from setuptools import setup, find_packages
+from os import path
 
-try:
-    import pypandoc
-    long_description = pypandoc.convert('README.md', to='rst', format='md')
-    long_description += "\n\n" + pypandoc.convert('AUTHORS.md', to='rst', format='md')
-except (IOError, ImportError):
-    long_description = ''
+this_directory = path.abspath(path.dirname(__file__))
+
+with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read()
+
+with open(path.join(this_directory, './fingerprintweb/__version__.py'), encoding='utf-8') as f:
+    version = f.read().strip()
 
 setup(
     name='fingerprintweb',
-    version='0.1.0-dev',
+    version=version,
     description='A tool for detecting technologies used by web applications. Hard forks wad v0.4.6',
     long_description=long_description,
+    long_description_content_type='text/markdown',
     url='https://github.com/0xcrypto/fingerprints',
     license='GPLv3',
     author='0xcrypto',
@@ -40,7 +43,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'fingerprint = wad.__main__:main'
+            'fingerprint = fingerprintweb.__main__:main'
         ]
     },
 )

@@ -6,8 +6,8 @@ import unittest
 import mock
 import operator
 
-from wad.detection import Detector, TIMEOUT
-from wad.tests.data.data_test_wad import cern_ch_test_data
+from ..detection import Detector, TIMEOUT
+from ..tests.data.data_test_wad import cern_ch_test_data
 
 
 class TestDetector(unittest.TestCase):
